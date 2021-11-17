@@ -1,0 +1,115 @@
+﻿@model MoveOn_Application_Mvc.Models.Request
+
+@{
+    ViewData["Title"] = "View_Job_Application_Number";
+}
+
+<h1>View_Job_Application_Number</h1>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobApplicationNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobApplicationNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShipmentTypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShipmentTypeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromCountry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromCountry)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromState)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromState)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToCountry)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToCountry)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToState)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToState)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PickupDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PickupDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

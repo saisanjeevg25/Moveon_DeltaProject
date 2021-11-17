@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Training Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="moveon_stylesheet.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="city_state.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="moveon_container">
+        <form action="/">
+            <div class="moveon_banner"></div>
+            <h1>Request Application Form</h1>
+            <div class="moveon_fields">
+                <div class="moveon_item">
+                    <input type="text" name="name" placeholder="Enter Your Name" />
+                </div>
+                <div class="moveon_item">
+                    <input type="text" name="phone" placeholder="Enter Your Phone Number" />
+                </div>
+                <div class="moveon_item">
+                    <input type="text" name="email" placeholder="Enter Your E-mail Address" />
+                </div>
+                <div class="moveon_item">
+                    <select name="item_category" id="categories">
+                        <option value="" disabled selected>Select Item Category</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Fragile">Fragile</option>
+                        <option value="Goods">Goods</option>
+                        <option value="Home">Goods</option>
+                        <option value="Office">Office</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="moveon_item">
+                    <input type="textarea" name="email" placeholder="Item Description" />
+                </div>
+                <div class="moveon_item">
+                    <label class="moveon_label">Domestic
+                        <input type="radio" checked="checked" name="radio" value=1>
+                        <span class="moveon_radio"></span>
+                    </label>&nbsp;
+                    <label class="moveon_label">International
+                        <input type="radio" name="radio" value=2>
+                        <span class="moveon_radio"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="moveon_fields_split_cols">
+                <div class="moveon_fields">
+                    <h3>Moving From</h3>
+                    <div class="moveon_item">
+                        <select name="country" class="countries" id="countryId">
+                            <option value="" selected disabled>Select Country</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <select name="state" class="states" id="stateId">
+                            <option value="" selected disabled>Select State</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <select name="city" class="cities" id="cityId">
+                            <option value="" selected disabled>Select City</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <input type="textarea" name="email" placeholder="No., Lane/Street, Locality, Zipcode" />
+                    </div>
+                </div>
+                <div class="moveon_fields">
+                    <h3>Moving To</h3>
+                    <div class="moveon_item">
+                        <select name="country" class="countries" id="countryId">
+                            <option value="" selected disabled>Select Country</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <select name="state" class="states" id="stateId">
+                            <option value="" selected disabled>Select State</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <select name="city" class="cities" id="cityId">
+                            <option value="" selected disabled>Select City</option>
+                        </select>
+                    </div>
+                    <div class="moveon_item">
+                        <input type="textarea" name="email" placeholder="No., Lane/Street, Locality, Zipcode" />
+                    </div>
+                </div>
+            </div>
+            <div class="moveon_fields">
+                <div class="moveon_item">
+                    <label>Enter Pickup Date:</label>
+                    <input type="date" name="pickupdate" />
+                </div>
+            </div>
+            <div class="moveon_fields">
+                <div class="moveon_item">
+                    <a href="" class="moveon_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+                    <a href="" class="moveon_button">Save</a>
+                    <a href="" class="moveon_button">Submit</a>
+                    <a href="" class="moveon_button"><i class="fas fa-backspace"></i>&nbsp;&nbsp;Clear</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

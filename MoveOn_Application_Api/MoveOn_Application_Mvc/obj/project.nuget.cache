@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Pe8yArmUSOt46PGHuIxBqUjWTmmxNIuoPIMgNDTMUt1RUvvuKzM8x+cXQFcl/Y+AdV9EdCxiW52L0HgQb+4Zfw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Merit\\source\\repos\\MoveOn_Application_Api\\MoveOn_Application_Mvc\\MoveOn_Application_Mvc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Merit\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
