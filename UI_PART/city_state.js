@@ -1,4 +1,3 @@
-
 function ajaxCall() {
     this.send = function(data, url, method, success, type) {
         type = type||'json';

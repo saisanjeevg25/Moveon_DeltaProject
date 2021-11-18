@@ -3,113 +3,71 @@
 @{
     ViewData["Title"] = "View_Job_Application_Number";
 }
-
-<h1>View_Job_Application_Number</h1>
-
-<div>
-    <h4>Request</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JobApplicationNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JobApplicationNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ItemCategory)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ItemCategory)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ItemDescription)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ItemDescription)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ShipmentTypeId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ShipmentTypeId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FromCountry)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FromCountry)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FromState)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FromState)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FromCity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FromCity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FromAddress)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FromAddress)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ToCountry)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ToCountry)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ToState)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ToState)
-        </dd>
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ToCity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ToCity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ToAddress)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ToAddress)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PickupDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PickupDate)
-        </dd>
-    </dl>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="~/css/moveon_stylesheet.css" rel="stylesheet" />
+</head>
+<div class="moveon_singleview_container">
+    <h1>@Html.DisplayFor(model => model.JobApplicationNumber)</h1>
+    <div class="moveon_singleview_split_cols">
+        <div class="moveon_singleview_rows basic" style="border:none; box-shadow: none;">
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Name:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Name)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Phone:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Phone)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">E-mail:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Email)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Item Category:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemCategory)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Item Description:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemDescription)</h3>
+            </div><br />
+            <div class="moveon_singleview_item_caption">
+                <h2 class="moveon_key">Pickup Date:</h2>&nbsp;&nbsp;<h2 class="moveon_value">@Html.DisplayFor(model => model.PickupDate)</h2>
+            </div><br />
+        </div>
+        <div class="moveon_singleview_rows" style="height: 100%; border:none; box-shadow: none;">
+            <div class="moveon_singleview_rows">
+                <div class="moveon_singleview_item_caption">
+                    <h2 class="moveon_key">Moving From</h2>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Country:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromState)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">State:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromState)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">City:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromCity)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Address:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromAddress)</h3>
+                </div><br />
+            </div>
+            <div class="moveon_singleview_rows">
+                <div class="moveon_singleview_item_caption">
+                    <h2 class="moveon_key">Moving To</h2>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Country:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToCountry)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">State:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToState)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">City:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToCity)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Address:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToAddress)</h3>
+                </div><br />
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+<a asp-action="Index"class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>

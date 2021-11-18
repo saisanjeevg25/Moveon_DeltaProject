@@ -42,3 +42,4 @@ C:\Users\Merit\source\repos\MoveOn_Application_Api\MoveOn_Application_Mvc\obj\De
 C:\Users\Merit\source\repos\MoveOn_Application_Api\MoveOn_Application_Mvc\obj\Debug\net5.0\ref\MoveOn_Application_Mvc.dll
 C:\Users\Merit\source\repos\MoveOn_Application_Api\MoveOn_Application_Mvc\obj\Debug\net5.0\MoveOn_Application_Mvc.pdb
 C:\Users\Merit\source\repos\MoveOn_Application_Api\MoveOn_Application_Mvc\obj\Debug\net5.0\MoveOn_Application_Mvc.genruntimeconfig.cache
+C:\Users\Merit\source\repos\MoveOn_Application_Api\MoveOn_Application_Mvc\bin\Debug\net5.0\libman.json
