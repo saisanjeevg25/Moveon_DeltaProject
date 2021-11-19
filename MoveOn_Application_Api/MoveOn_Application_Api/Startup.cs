@@ -30,6 +30,7 @@ namespace MoveOn_Application_Api
         {
 
             services.AddControllers();
+            services.AddSession(e => { e.IdleTimeout = TimeSpan.FromMinutes(15); });
             services.AddDbContext<MOVEON_DBContext>(options => options.UseSqlServer("data source=.;initial catalog=MOVEON_DB;Integrated Security=true;"));
             services.AddSwaggerGen(c =>
             {
@@ -48,6 +49,8 @@ namespace MoveOn_Application_Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSession();
 
             app.UseRouting();
 

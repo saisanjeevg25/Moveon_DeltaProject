@@ -1,126 +1,64 @@
 ﻿@model IEnumerable<MoveOn_Application_Mvc.Models.Request>
 
 @{
-    ViewData["Title"] = "View_International_Requests";
+    ViewData["Title"] = "International Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>View_International_Requests</h1>
-
-<p>
-    <a asp-controller="Request" asp-action="View_Domestic_Requests">Domestic Requests</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.JobApplicationNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemCategory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ShipmentTypeId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FromCountry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FromState)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FromCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FromAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToCountry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToState)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PickupDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="moveon_views">
+    <h1>All Requests</h1>
+</div>
+<div class="moveon_slidercontrol">
+    <input type="radio" name="slide" id="domestic" >
+    <input type="radio" name="slide" id="international" checked>
+    <label for="domestic" class="slide domestic"><a asp-controller="Request" asp-action="View_Domestic_Requests" style="text-decoration:none; color:white;">Domestic</a></label>
+    <label for="international" class="slide international">International</label>
+    <div class="moveon_slidertext"></div>
+</div>
+<div class="moveon_table">
+    <div class="moveon_table_header">
+        <div class="moveon_table_header_cell">
+            Job Application Number
+        </div>
+        <div class="moveon_table_header_cell">
+            Name
+        </div>
+        <div class="moveon_table_header_cell">
+            Item Category
+        </div>
+        <div class="moveon_table_header_cell">
+            From Location
+        </div>
+        <div class="moveon_table_header_cell">
+            To Location
+        </div>
+        <div class="moveon_table_header_cell">
+            Pickup Date
+        </div>
+    </div>
+    <div class="moveon_table_body">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <a asp-controller="Request" asp-action="View_Job_Application_Number" asp-route-id="@item.JobApplicationNumber" class="btn btn-outline-info">@Html.DisplayFor(modelItem => item.JobApplicationNumber)</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemCategory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShipmentTypeId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FromCountry)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FromState)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FromCity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FromAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ToCountry)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ToState)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ToCity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ToAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PickupDate)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
+        <div class="moveon_table_body_row">
+            <div class="moveon_table_body_cell">
+                <a asp-controller="Request" asp-action="View_Int_Job_Application_Number" asp-route-id="@item.JobApplicationNumber" class="btn btn-outline-info">@Html.DisplayFor(modelItem => item.JobApplicationNumber)</a>
+            </div>
+            <div class="moveon_table_body_cell">
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            <div class="moveon_table_body_cell">
+                @Html.DisplayFor(modelItem => item.ItemCategory)
+            </div>
+            <div class="moveon_table_body_cell">
+                @Html.DisplayFor(modelItem => item.FromCity), @Html.DisplayFor(modelItem => item.FromCountry)
+            </div>
+            <div class="moveon_table_body_cell">
+                @Html.DisplayFor(modelItem => item.ToCity), @Html.DisplayFor(modelItem => item.ToCountry)
+            </div>
+            <div class="moveon_table_body_cell">
+                @Html.DisplayFor(modelItem => item.PickupDate)
+            </div>
+        </div>
         }
-    </tbody>
-</table>
+        </div>
+</div>
+<a asp-controller="Home" asp-action="Index" class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>

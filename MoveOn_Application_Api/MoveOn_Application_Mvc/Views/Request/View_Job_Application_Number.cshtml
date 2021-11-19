@@ -1,18 +1,13 @@
 ﻿@model MoveOn_Application_Mvc.Models.Request
 
 @{
-    ViewData["Title"] = "View_Job_Application_Number";
+    ViewData["Title"] = "Job Application Number";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link href="~/css/moveon_stylesheet.css" rel="stylesheet" />
-</head>
 <div class="moveon_singleview_container">
     <h1>@Html.DisplayFor(model => model.JobApplicationNumber)</h1>
     <div class="moveon_singleview_split_cols">
-        <div class="moveon_singleview_rows basic" style="border:none; box-shadow: none;">
+        <div class="moveon_singleview_rows basic" style="border:none;">
             <div class="moveon_singleview_item">
                 <h3 class="moveon_key">Name:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Name)</h3>
             </div><br />
@@ -32,7 +27,7 @@
                 <h2 class="moveon_key">Pickup Date:</h2>&nbsp;&nbsp;<h2 class="moveon_value">@Html.DisplayFor(model => model.PickupDate)</h2>
             </div><br />
         </div>
-        <div class="moveon_singleview_rows" style="height: 100%; border:none; box-shadow: none;">
+        <div class="moveon_singleview_rows" style="border:none; margin:0;">
             <div class="moveon_singleview_rows">
                 <div class="moveon_singleview_item_caption">
                     <h2 class="moveon_key">Moving From</h2>
@@ -70,4 +65,4 @@
         </div>
     </div>
 </div>
-<a asp-action="Index"class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+<a asp-action="View_Domestic_Requests"class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
