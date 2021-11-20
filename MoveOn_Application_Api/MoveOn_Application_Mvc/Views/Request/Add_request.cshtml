@@ -1,108 +1,228 @@
 ﻿@model MoveOn_Application_Mvc.Models.Request
 
 @{
-    ViewData["Title"] = "Add Request";
+    ViewData["Title"] = "Add_request";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+               
 <h1>Add_request</h1>
 
-<h4>Request</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Add_request">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="JobApplicationNumber" class="control-label"></label>
-                <input asp-for="JobApplicationNumber" class="form-control" />
-                <span asp-validation-for="JobApplicationNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ItemCategory" class="control-label"></label>
-                <input asp-for="ItemCategory" class="form-control" />
-                <span asp-validation-for="ItemCategory" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ItemDescription" class="control-label"></label>
-                <input asp-for="ItemDescription" class="form-control" />
-                <span asp-validation-for="ItemDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ShipmentTypeId" class="control-label"></label>
-                <input asp-for="ShipmentTypeId" class="form-control" />
-                <span asp-validation-for="ShipmentTypeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FromCountry" class="control-label"></label>
-                <input asp-for="FromCountry" class="form-control" />
-                <span asp-validation-for="FromCountry" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FromState" class="control-label"></label>
-                <input asp-for="FromState" class="form-control" />
-                <span asp-validation-for="FromState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FromCity" class="control-label"></label>
-                <input asp-for="FromCity" class="form-control" />
-                <span asp-validation-for="FromCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FromAddress" class="control-label"></label>
-                <input asp-for="FromAddress" class="form-control" />
-                <span asp-validation-for="FromAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToCountry" class="control-label"></label>
-                <input asp-for="ToCountry" class="form-control" />
-                <span asp-validation-for="ToCountry" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToState" class="control-label"></label>
-                <input asp-for="ToState" class="form-control" />
-                <span asp-validation-for="ToState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToCity" class="control-label"></label>
-                <input asp-for="ToCity" class="form-control" />
-                <span asp-validation-for="ToCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ToAddress" class="control-label"></label>
-                <input asp-for="ToAddress" class="form-control" />
-                <span asp-validation-for="ToAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PickupDate" class="control-label"></label>
-                <input asp-for="PickupDate" class="form-control" />
-                <span asp-validation-for="PickupDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <h4>Request</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Add_request">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="JobApplicationNumber" class="control-label"></label>
+                    <input asp-for="JobApplicationNumber" class="form-control" />
+                    <span asp-validation-for="JobApplicationNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ItemCategory" class="control-label"></label>
+                    <input asp-for="ItemCategory" class="form-control" />
+                    <span asp-validation-for="ItemCategory" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ItemDescription" class="control-label"></label>
+                    <input asp-for="ItemDescription" class="form-control" />
+                    <span asp-validation-for="ItemDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="ShipmentTypeId" id="ShipmentType" >
+                        <option>Select Shipment Type</option>
+                        <option value=1>Domestic</option>
+                        <option value=2>International</option>
+                    </select>
+                    <span asp-validation-for="ShipmentTypeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="FromCountry" class="control-label"></label>
+        <input asp-for="FromCountry" class="form-control" />
+        <span asp-validation-for="FromCountry" class="text-danger"></span>*@
+                    <select asp-for="FromCountry" id="FromCountryList" asp-items="@ViewBag.Countries">
+                        <option>Select Country</option>
+                    </select>
+                    <span asp-validation-for="FromCountry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="FromState" class="control-label"></label>
+        <input asp-for="FromState" class="form-control" />
+        <span asp-validation-for="FromState" class="text-danger"></span>*@
+                    <select asp-for="FromState" id="FromStateList" >
+                        <option>Select State</option>
+                    </select>
+                    <span asp-validation-for="FromState" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="FromCity" class="control-label"></label>
+        <input asp-for="FromCity" class="form-control" />
+        <span asp-validation-for="FromCity" class="text-danger"></span>*@
+                    <select asp-for="FromCity" id="FromCityList">
+                        <option>Select City</option>
+                    </select>
+                    <span asp-validation-for="FromCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FromAddress" class="control-label"></label>
+                    <input asp-for="FromAddress" class="form-control" />
+                    <span asp-validation-for="FromAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="ToCountry" class="control-label"></label>
+                    <input asp-for="ToCountry" class="form-control" />
+                    <span asp-validation-for="ToCountry" class="text-danger"></span>*@
+                    <select asp-for="ToCountry" id="ToCountryList" asp-items="@ViewBag.Countries">
+                        <option>Select Country</option>
+                    </select>
+                    <span asp-validation-for="ToCountry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="ToState" class="control-label"></label>
+        <input asp-for="ToState" class="form-control" />
+        <span asp-validation-for="ToState" class="text-danger"></span>*@
+                    <select asp-for="ToState" id="ToStateList">
+                        <option>Select Country</option>
+                    </select>
+                    <span asp-validation-for="ToState" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="ToCity" class="control-label"></label>
+        <input asp-for="ToCity" class="form-control" />
+        <span asp-validation-for="ToCity" class="text-danger"></span>*@
+                    <select asp-for="ToCity" id="ToCityList">
+                        <option>Select City</option>
+                    </select>
+                    <span asp-validation-for="ToCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ToAddress" class="control-label"></label>
+                    <input asp-for="ToAddress" class="form-control" />
+                    <span asp-validation-for="ToAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PickupDate" class="control-label"></label>
+                    <input asp-for="PickupDate" class="form-control" />
+                    <span asp-validation-for="PickupDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
 @section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            @*$("#ShipmentType").change(function () {
+                if ($("#ShipmentType").val() == 1) {
+                    $("#FromCountryList").append('<option value="India" selected >India</option>');
+                    $("#ToCountryList").append('<option value="India" selected >India</option>');
+                }
+                else {
+                    $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Country_dropdown")',
+                    dataType: 'json',
+
+                    success: function (countries) {
+                        $(countries).each(function () {
+                            $("#FromCountryList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                            $("#ToCountryList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+                }
+            });*@
+            $("#FromCountryList").change(function () {
+                $("#FromStateList").empty();
+                $("#FromCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("State_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#FromCountryList").val() },
+
+                    success: function (states) {
+                        $(states).each(function () {
+                            $("#FromStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+            $("#FromStateList").change(function () {
+                $("#FromCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("City_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#FromStateList").val() },
+
+                    success: function (cities) {
+                        $(cities).each(function () {
+                            $("#FromCityList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+            $("#ToCountryList").change(function () {
+                $("#ToStateList").empty();
+                $("#ToCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("State_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#ToCountryList").val() },
+
+                    success: function (states) {
+                        $(states).each(function () {
+                            $("#ToStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+            $("#ToStateList").change(function () {
+                $("#ToCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("City_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#ToStateList").val() },
+
+                    success: function (cities) {
+                        $(cities).each(function () {
+                            $("#ToCityList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
