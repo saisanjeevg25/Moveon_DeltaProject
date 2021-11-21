@@ -1,0 +1,68 @@
+﻿@model MoveOn_Relocation_Company_Mvc.Models.Request
+
+@{
+    ViewData["Title"] = "Job Application Number";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="moveon_singleview_container">
+    <h1>@Html.DisplayFor(model => model.JobApplicationNumber)</h1>
+    <div class="moveon_singleview_split_cols">
+        <div class="moveon_singleview_rows basic" style="border:none;">
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Name:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Name)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Phone:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Phone)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">E-mail:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.Email)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Item Category:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemCategory)</h3>
+            </div><br />
+            <div class="moveon_singleview_item">
+                <h3 class="moveon_key">Item Description:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemDescription)</h3>
+            </div><br />
+            <div class="moveon_singleview_item_caption">
+                <h2 class="moveon_key">Pickup Date:</h2>&nbsp;&nbsp;<h2 class="moveon_value">@Html.DisplayFor(model => model.PickupDate)</h2>
+            </div><br />
+        </div>
+        <div class="moveon_singleview_rows" style="border:none; margin:0;">
+            <div class="moveon_singleview_rows">
+                <div class="moveon_singleview_item_caption">
+                    <h2 class="moveon_key">Moving From</h2>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Country:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromCountry)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">State:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromState)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">City:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromCity)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Address:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.FromAddress)</h3>
+                </div><br />
+            </div>
+            <div class="moveon_singleview_rows">
+                <div class="moveon_singleview_item_caption">
+                    <h2 class="moveon_key">Moving To</h2>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Country:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToCountry)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">State:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToState)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">City:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToCity)</h3>
+                </div><br />
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Address:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ToAddress)</h3>
+                </div><br />
+            </div>
+        </div>
+    </div>
+</div>
+<a asp-action="View_International_Requests" class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>

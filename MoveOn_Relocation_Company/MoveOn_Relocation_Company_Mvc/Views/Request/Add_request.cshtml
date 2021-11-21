@@ -1,0 +1,330 @@
+﻿@model MoveOn_Relocation_Company_Mvc.Models.Request
+
+@{
+    ViewData["Title"] = "Add_request";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="moveon_container">
+        <div class="moveon_banner"></div>
+        <h1>Request Application Form</h1>
+        <form asp-action="Add_request">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="moveon_fields">
+                <div class="moveon_item">
+                    <input asp-for="Name" class="moveon_item_input_text" placeholder="Enter Your Name" id="name"/>
+                    <br />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="moveon_item">
+                    <input asp-for="Phone" class="moveon_item_input_text" placeholder="Enter Your Mobile Number" id="phone"/>
+                    <br />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="moveon_item">
+                    <input asp-for="Email" class="moveon_item_input_text" placeholder="Enter Your Email ID" id="email"/>
+                    <br />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="moveon_item">
+                    <select asp-for="ItemCategory" class="moveon_item_select" id="category">
+                        <option value="" selected disabled>Select Item Category</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Fragile">Fragile</option>
+                        <option value="Appliance">Appliance</option>
+                        <option value="Goods">Goods</option>
+                        <option value="Office">Office</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <br />
+                    <span asp-validation-for="ItemCategory" class="text-danger"></span>
+                </div>
+                <div class="moveon_item">
+                    <input asp-for="ItemDescription" class="moveon_item_input_textarea" placeholder="Describe Items"  id="description"/>
+                </div>
+                <div class="moveon_item">
+                    <select asp-for="ShipmentType" id="ShipmentType" class="moveon_item_select">
+                        <option value="" disabled selected>Select Shipment Type </option>
+                        <option value="DOMESTIC">Domestic</option>
+                        <option value="INTERNATIONAL">International</option>
+                    </select>
+                    <br />
+                    <span asp-validation-for="ShipmentType" class="text-danger"></span>
+                </div>
+            </div>
+                <div class="moveon_fields_split_cols" id="locs" style="display:none;">
+                    <div class="moveon_fields">
+                        <h3 style="color: rgb(7, 38, 138);">Moving From</h3>
+                        <div class="moveon_item">
+                            <select asp-for="FromCountry" id="FromCountryList" class="moveon_item_select" asp-items="@ViewBag.Countries">
+                                <option value=" ">Select Country</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="FromCountry" class="text-danger"></span>
+                        </div>
+                        <div class="moveon_item">
+                            <select asp-for="FromState" id="FromStateList" class="moveon_item_select">
+                                <option>Select State</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="FromState" class="text-danger"></span>
+                        </div>
+                        <div class="moveon_item">
+                            <select asp-for="FromCity" id="FromCityList" class="moveon_item_select">
+                                <option>Select City</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="FromCity" class="text-danger"></span>
+                        </div>
+                        <div class="moveon_item">
+                            <input asp-for="FromAddress" class="moveon_item_input_textarea" placeholder="No./Locality/Zipcode" id="fromaddress" />
+                            <br />
+                            <span asp-validation-for="FromAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="moveon_fields">
+                        <h3 style="color: rgb(7, 38, 138);">Moving To</h3>
+                        <div class="moveon_item">
+                            <select asp-for="ToCountry" id="ToCountryList" asp-items="@ViewBag.Countries" class="moveon_item_select">
+                                <option value=" ">Select Country</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="ToCountry" class="text-danger"></span>
+                        </div>
+ 
+                        <div class="moveon_item">
+                            <select asp-for="ToState" id="ToStateList" class="moveon_item_select">
+                                <option selected>Select To State</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="ToState" class="text-danger"></span>
+                        </div>
+                        <div class="moveon_item">
+                            <select asp-for="ToCity" id="ToCityList" class="moveon_item_select">
+                                <option selected>Select To City</option>
+                            </select>
+                            <br />
+                            <span asp-validation-for="ToCity" class="text-danger"></span>
+                        </div>
+                        <div class="moveon_item">
+                            <input asp-for="ToAddress" class="moveon_item_input_textarea" placeholder="No./Locality/Zipcode" id="toaddress" />
+                            <br />
+                            <span asp-validation-for="ToAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="moveon_item" id="pickupdate" style="display:none;">
+                    <label style="color: rgb(7, 38, 138);">Enter Pickup Date:</label>
+                    <input asp-for="PickupDate" class="moveon_item_input_date" id="date" />
+                    <br />
+                    <span asp-validation-for="PickupDate" class="text-danger"></span>
+                </div>
+                <div class="moveon_fields">
+                    <div class="moveon_item">
+                        <input type="submit" value="Submit" class="moveon_button" onclick="clearall()"/>
+                        <input type="reset" value="Clear" class="moveon_button clear">
+                    </div>
+                </div>
+</form>
+</div>
+    </div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index" style="text-decoration:none; color:white;" class="moveon_back_button"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+    <button class="moveon_button" onclick="save()" style="font-size:19px;">Save</button>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ShipmentType").change(function () {
+                if ($("#ShipmentType").val() == "DOMESTIC") {
+
+                    document.getElementById("locs").style.display = "flex";
+                    document.getElementById("pickupdate").style.display = "block";
+                    $("#FromCountryList").change(function () {
+                        var dom = $("#FromCountryList").val();
+                        $("#ToCountryList").val(dom);
+                        $("#FromStateList").empty();
+                        $("#ToStateList").empty();
+                        $("#FromCityList").empty();
+                        $("#ToCityList").empty();
+                        $.ajax({
+                            type: 'GET',
+                            url: '@Url.Action("State_dropdown")',
+                            dataType: 'json',
+                            data: { "name": dom },
+
+                            success: function (states) {
+                                $("#FromStateList").append('<option value=" " selected disabled> Select From State </option>');
+                                $("#FromStateList").append('<option value=" " selected disabled> Select To State </option>');
+                                $(states).each(function () {
+                                    $("#FromStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                                    $("#ToStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                                });
+                            }
+                        });
+                        return false;
+                        event.stopPropagation();
+                    });
+                    $("#ToCountryList").change(function () {
+                        var dom = $("#ToCountryList").val();
+                        $("#FromCountryList").val(dom);
+                        $("#FromStateList").empty();
+                        $("#ToStateList").empty();
+                        $("#FromCityList").empty();
+                        $("#ToCityList").empty();
+                        $.ajax({
+                            type: 'GET',
+                            url: '@Url.Action("State_dropdown")',
+                            dataType: 'json',
+                            data: { "name": dom },
+
+                            success: function (states) {
+                                $("#FromStateList").append('<option value=" " selected disabled> Select From State </option>');
+                                $("#FromStateList").append('<option value=" " selected disabled> Select To State </option>');
+                                $(states).each(function () {
+                                    $("#FromStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                                    $("#ToStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                                });
+                            }
+                        });
+                        return false;
+                    });
+                }
+                if ($("#ShipmentType").val() == "INTERNATIONAL") {
+                    $("#FromCountryList").off("change");
+                    $("#ToCountryList").off("change");
+                    document.getElementById("locs").style.display = "flex";
+                    document.getElementById("pickupdate").style.display = "block";
+                    $("#FromCountryList").change(function () {
+                $("#FromStateList").empty();
+                $("#FromCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("State_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#FromCountryList").val() },
+
+                    success: function (states) {
+                        $("#FromStateList").append('<option value=" " selected disabled> Select From State </option>');
+                        $(states).each(function () {
+                            $("#FromStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+                $("#ToCountryList").change(function () {
+                $("#ToStateList").empty();
+                $("#ToCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("State_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#ToCountryList").val() },
+
+                    success: function (states) {
+                        $("#ToStateList").append('<option value=" " selected disabled> Select To State </option>');
+                        $(states).each(function () {
+                            $("#ToStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+                }
+            });
+            $("#FromStateList").change(function () {
+                $("#FromCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("City_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#FromStateList").val() },
+
+                    success: function (cities) {
+                        $("#FromCityList").append('<option value=" " selected disabled> Select From City </option>');
+                        $(cities).each(function () {
+                            $("#FromCityList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+        $("#ToStateList").change(function () {
+                $("#ToCityList").empty();
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("City_dropdown")',
+                    dataType: 'json',
+                    data: { "name": $("#ToStateList").val() },
+
+                    success: function (cities) {
+                        $("#ToCityList").append('<option value=" " selected disabled> Select To City </option>');
+                        $(cities).each(function () {
+                            $("#ToCityList").append('<option value="' + this.value + '">' + this.text + '</option>');
+                        });
+                    }
+                });
+                return false;
+        });
+
+        function save() {
+
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("phone", document.getElementById("phone").value);
+            localStorage.setItem("email", document.getElementById("email").value);
+            localStorage.setItem("category", document.getElementById("category").value);
+            localStorage.setItem("description", document.getElementById("description").value);
+            localStorage.setItem("shipment", document.getElementById("shipment").value);
+            localStorage.setItem("fromcountry", document.getElementById("FromCountryList").value);
+            localStorage.setItem("fromstate", document.getElementById("FromStateList").value);
+            localStorage.setItem("fromcity", document.getElementById("FromCityList").value);
+            localStorage.setItem("fromaddress", document.getElementById("fromaddress").value);
+            localStorage.setItem("tocountry", document.getElementById("ToCountryList").value);
+            localStorage.setItem("tostate", document.getElementById("ToStateList").value);
+            localStorage.setItem("tocity", document.getElementById("ToCityList").value);
+            localStorage.setItem("toaddress", document.getElementById("toaddress").value);
+            localStorage.setItem("date", document.getElementById("date").value);
+        }
+
+        window.onload = function () {
+            var name = localStorage.getItem("name");
+            var phone = localStorage.getItem("phone");
+            var email = localStorage.getItem("email");
+            var category = localStorage.getItem("category");
+            var description = localStorage.getItem("description");
+            var shipment = localStorage.getItem("shipment");
+            var fromcountry = localStorage.getItem("fromcountry");
+            var fromstate = localStorage.getItem("fromstate");
+            var fromcity = localStorage.getItem("fromcity");
+            var fromaddress = localStorage.getItem("fromaddress");
+            var tocountry = localStorage.getItem("tocountry");
+            var tostate = localStorage.getItem("tostate");
+            var tocity = localStorage.getItem("tocity");
+            var toaddress = localStorage.getItem("toaddress");
+            var date = localStorage.getItem("date");
+            if (name !== null) document.getElementById("name").value = name;
+            if (phone !== null) document.getElementById("phone").value = phone;
+            if (email !== null) document.getElementById("email").value = email;
+            if (category !== null) document.getElementById("category").value = category;
+            if (description !== null) document.getElementById("description").value = description;
+            if (shipment !== null) document.getElementById("ShipmentType").value = shipment;
+            if (fromcountry !== null) document.getElementById("FromCountryList").value = fromcountry;
+            if (fromstate !== null) document.getElementById("FromStateList").value = fromstate;
+            if (fromcity !== null) document.getElementById("FromCityList").value = fromcity;
+            if (fromaddress !== null) document.getElementById("fromaddress").value = fromaddress;
+            if (tocountry !== null) document.getElementById("ToCountryList").value = tocountry;
+            if (tostate !== null) document.getElementById("ToStateList").value = tostate;
+            if (tocity !== null) document.getElementById("ToCityList").value = tocity;
+            if (toaddress !== null) document.getElementById("toaddress").value = toaddress;
+            if (date !== null) document.getElementById("date").value = date;
+        }
+        function clearall() {
+            window.localStorage.clear();
+        }
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
