@@ -149,3 +149,4 @@ C:\Users\Merit\source\repos\MoveOn_Relocation_Company\MoveOn_Relocation_Company_
 C:\Users\Merit\source\repos\MoveOn_Relocation_Company\MoveOn_Relocation_Company_Mvc\obj\Debug\net5.0\Razor\Views\Request\View_International_Requests.cshtml.g.cs
 C:\Users\Merit\source\repos\MoveOn_Relocation_Company\MoveOn_Relocation_Company_Mvc\obj\Debug\net5.0\Razor\Views\Request\View_Int_Job_Application_Number.cshtml.g.cs
 C:\Users\Merit\source\repos\MoveOn_Relocation_Company\MoveOn_Relocation_Company_Mvc\obj\Debug\net5.0\Razor\Views\Request\View_Job_Application_Number.cshtml.g.cs
+C:\Users\Merit\source\repos\MoveOn_Relocation_Company\MoveOn_Relocation_Company_Mvc\obj\Debug\net5.0\Razor\Views\Request\Success_Job_Application_Number.cshtml.g.cs

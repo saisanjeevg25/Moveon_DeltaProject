@@ -1,0 +1,20 @@
+﻿@model MoveOn_Relocation_Company_Mvc.Models.Request
+
+@{
+    ViewData["Title"] = "Success Job Application Number";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body style="height:40%;">
+    <div class="moveon_success_container">
+        <img src="~/lib/Assets/check-mark.gif">
+        <div class="moveon_success_rows">
+            <div class="moveon_success_item">
+                <h3 style="margin-bottom: .5rem; font-weight: bold; line-height: 1.2;"> Your Request is Submitted Successfully!!</h3>
+            </div><br />
+            <div class="moveon_success_item">
+                <h3 class="moveon_key" style="margin-bottom: .5rem; font-weight: bold; line-height: 1.2;">Your Job Application Number is:</h3>&nbsp;&nbsp;<h3 class="moveon_value" id="appln" style="margin-bottom: .5rem; font-weight: bold; line-height: 1.2;">@Html.DisplayFor(model => model.JobApplicationNumber)</h3>
+            </div>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="moveon_success__btn">Return to Home Page</a>
+    </div>
+</body>

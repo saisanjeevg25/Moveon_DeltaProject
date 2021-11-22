@@ -20,9 +20,12 @@
             <div class="moveon_singleview_item">
                 <h3 class="moveon_key">Item Category:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemCategory)</h3>
             </div><br />
-            <div class="moveon_singleview_item">
-                <h3 class="moveon_key">Item Description:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemDescription)</h3>
-            </div><br />
+            @if (@Model.ItemDescription != null)
+            {
+                <div class="moveon_singleview_item">
+                    <h3 class="moveon_key">Item Description:</h3>&nbsp;&nbsp;<h3 class="moveon_value">@Html.DisplayFor(model => model.ItemDescription)</h3>
+                </div><br />
+            }
             <div class="moveon_singleview_item_caption">
                 <h2 class="moveon_key">Pickup Date:</h2>&nbsp;&nbsp;<h2 class="moveon_value">@Html.DisplayFor(model => model.PickupDate)</h2>
             </div><br />

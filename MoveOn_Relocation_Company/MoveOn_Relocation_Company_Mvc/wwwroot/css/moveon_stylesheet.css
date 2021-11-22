@@ -152,58 +152,6 @@
         color: #576366;
     }
 
-/*.moveon_label {
-    position: relative;
-    padding-left: 25px;
-    top: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-    .moveon_label input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-.moveon_radio {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    height: 16px;
-    width: 16px;
-    background-color: #e8ebed;
-    border-radius: 50%;
-    border: 1px solid rgba(7, 38, 138)
-}
-
-.moveon_label:hover input ~ .moveon_radio {
-    background-color: #e8ebed;
-}
-
-.moveon_label input:checked ~ .moveon_radio {
-    background-color: #576366;
-}
-
-.moveon_radio:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.moveon_label .moveon_radio:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #e8ebed;
-}*/
-
 .moveon_item_input_date {
     width: 30%;
     margin: 0 15px;
@@ -581,5 +529,76 @@
 
     .moveon_back_button {
         margin-left: 2em;
+    }
+}
+/*Style Sheet for Success Page*/
+.moveon_success_container {
+    display: flex;
+    position: relative;
+    width: 60%;
+    margin: 40px auto;
+    border: 1px solid rgba(7, 38, 138);
+    box-shadow: 4px 14px 18px rgba(7, 38, 138);
+}
+
+.moveon_success_rows {
+    margin: 70px 20px;
+    text-align: left;
+    width: 90%;
+    display: block;
+    height: fit-content;
+}
+
+.moveon_success_item {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: -15px;
+    display: inline-flex;
+}
+
+
+/*Button*/
+.moveon_success__btn {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(7, 38, 138);
+    ;
+    color: #FFFFFF;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 14px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+    .moveon_success__btn:hover {
+        color: white;
+        background-color: #4095c6;
+        text-decoration: none;
+    }
+
+/*Responsive Media Queries*/
+@media(max-width:1100px) {
+    .moveon_success_container {
+        width: 95%;
+        display: block;
+        text-align: center;
+    }
+
+    .moveon_success__btn span:after {
+        left: 85%;
+    }
+
+    .moveon_success_item {
+        display: inline-block;
+    }
+
+    #appln {
+        margin-top: -30px;
     }
 }

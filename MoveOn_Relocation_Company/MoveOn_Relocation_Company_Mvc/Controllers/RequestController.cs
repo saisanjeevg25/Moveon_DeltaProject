@@ -73,6 +73,19 @@ namespace MoveOn_Relocation_Company_Mvc.Controllers
             return View(reqs);
         }
 
+        public async Task<IActionResult> Success_Job_Application_Number()
+        {
+            var reqs = new Request();
+            HttpClient cli = _api.Initial();
+            HttpResponseMessage result = await cli.GetAsync("api/TblRequests/JobApplicationNumber");
+            if (result.IsSuccessStatusCode)
+            {
+                var res = result.Content.ReadAsStringAsync().Result;
+                reqs = JsonConvert.DeserializeObject<Request>(res);
+            }
+            return View(reqs);
+        }
+
         public ActionResult Add_request()
         {
             Request req = new Request();
@@ -90,7 +103,7 @@ namespace MoveOn_Relocation_Company_Mvc.Controllers
             HttpResponseMessage response = cli.PostAsync(cli.BaseAddress + "api/TblRequests", content).Result;
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction(actionName: "Index", controllerName: "Home");
+                return RedirectToAction(actionName: "Success_Job_Application_Number", controllerName: "Request");
             }
             return View();
         }
