@@ -211,6 +211,7 @@
                     document.getElementById("locs").style.display = "flex";
                     document.getElementById("pickupdate").style.display = "block";
                     $("#FromCountryList").change(function () {
+                    $("#ToCountryList option").prop('disabled', false);
                         var nxt = $("#FromCountryList").val();
                         $("#ToCountryList option[value='" + nxt + "']").prop("disabled", true);
                 $("#FromStateList").empty();
