@@ -57,14 +57,14 @@
                         <h3 style="color: rgb(7, 38, 138);">Moving From</h3>
                         <div class="moveon_item">
                             <select asp-for="FromCountry" id="FromCountryList" class="moveon_item_select" asp-items="@ViewBag.Countries">
-                                <option value=" ">Select Country</option>
+                                <option value=" " disabled selected>Select Country</option>
                             </select>
                             <br />
                             <span asp-validation-for="FromCountry" class="text-danger"></span>
                         </div>
                         <div class="moveon_item">
                             <select asp-for="FromState" id="FromStateList" class="moveon_item_select">
-                                <option>Select State</option>
+                                <option >Select State</option>
                             </select>
                             <br />
                             <span asp-validation-for="FromState" class="text-danger"></span>
@@ -86,7 +86,7 @@
                         <h3 style="color: rgb(7, 38, 138);">Moving To</h3>
                         <div class="moveon_item">
                             <select asp-for="ToCountry" id="ToCountryList" asp-items="@ViewBag.Countries" class="moveon_item_select">
-                                <option value=" ">Select Country</option>
+                                <option value=" " disabled selected>Select Country</option>
                             </select>
                             <br />
                             <span asp-validation-for="ToCountry" class="text-danger"></span>
