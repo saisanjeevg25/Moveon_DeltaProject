@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-#nullable disable
-
 namespace MoveOn_Relocation_Company_Mvc.Models
 {
     public partial class Request
@@ -15,9 +13,12 @@ namespace MoveOn_Relocation_Company_Mvc.Models
         [StringLength(25, MinimumLength = 3, ErrorMessage = "Name Should be Minimum of 3 Characters")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please Provide Your Mobile Number")]
-        [Phone(ErrorMessage = "Number Should be of 10 digits")]
+        [StringLength(10, MinimumLength =10, ErrorMessage = "Number Should be of 10 digits")]
+        [DataType(DataType.PhoneNumber)]
+        [Phone(ErrorMessage = " Please Enter Numbers")]
         public string Phone { get; set; }
         [Required(ErrorMessage = "Please Provide Your Email")]
+        [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Please Provide a Valid Email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Please Provide item Category")]

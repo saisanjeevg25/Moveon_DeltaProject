@@ -95,6 +95,7 @@ namespace MoveOn_Relocation_Company_Mvc.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add_request(Request request)
         {
             HttpClient cli = _api.Initial();

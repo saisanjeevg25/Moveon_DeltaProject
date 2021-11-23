@@ -114,8 +114,8 @@
                     </div>
                 </div>
                 <div class="moveon_item" id="pickupdate" style="display:none;">
-                    <label style="color: rgb(7, 38, 138);">Enter Pickup Date:</label>
-                    <input asp-for="PickupDate" class="moveon_item_input_date" id="date" />
+                    <label style="color: rgb(7, 38, 138);" >Enter Pickup Date:</label>
+                    <input asp-for="PickupDate" class="moveon_item_input_date" id="date"  />
                     <br />
                     <span asp-validation-for="PickupDate" class="text-danger"></span>
                 </div>
@@ -137,9 +137,22 @@
 @section Scripts {
     <script type="text/javascript">
         $(document).ready(function () {
+            $(function () {
+                var today = new Date();
+                var month = today.getMonth() + 1;
+                var day = today.getDate() + 1;
+                var year = today.getFullYear();
+                if (month < 10)
+                    month = '0' + month.toString();
+                if (day < 10)
+                    day = '0' + day.toString();
+                var maxdate = year + '-' + month + '-' + day ;
+                $("#date").attr('min', maxdate);
+            });
             $("#ShipmentType").change(function () {
                 if ($("#ShipmentType").val() == "DOMESTIC") {
-
+                    $("#FromCountryList").off("change");
+                    $("#ToCountryList").off("change");
                     document.getElementById("locs").style.display = "flex";
                     document.getElementById("pickupdate").style.display = "block";
                     $("#FromCountryList").change(function () {
@@ -157,7 +170,7 @@
 
                             success: function (states) {
                                 $("#FromStateList").append('<option value=" " selected disabled> Select From State </option>');
-                                $("#FromStateList").append('<option value=" " selected disabled> Select To State </option>');
+                                $("#ToStateList").append('<option value=" " selected disabled> Select To State </option>');
                                 $(states).each(function () {
                                     $("#FromStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
                                     $("#ToStateList").append('<option value="' + this.value + '">' + this.text + '</option>');
@@ -198,6 +211,8 @@
                     document.getElementById("locs").style.display = "flex";
                     document.getElementById("pickupdate").style.display = "block";
                     $("#FromCountryList").change(function () {
+                        var nxt = $("#FromCountryList").val();
+                        $("#ToCountryList option[value='" + nxt + "']").prop("disabled", true);
                 $("#FromStateList").empty();
                 $("#FromCityList").empty();
                 $.ajax({
@@ -272,7 +287,7 @@
         });
 
         function save() {
-
+            alert("Data Saved!!");
             localStorage.setItem("name", document.getElementById("name").value);
             localStorage.setItem("phone", document.getElementById("phone").value);
             localStorage.setItem("email", document.getElementById("email").value);
