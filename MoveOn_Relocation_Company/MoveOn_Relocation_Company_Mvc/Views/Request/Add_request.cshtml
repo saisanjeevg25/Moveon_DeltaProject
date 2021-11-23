@@ -231,7 +231,10 @@
                 });
                 return false;
             });
-                $("#ToCountryList").change(function () {
+                    $("#ToCountryList").change(function () {
+                        $("#FromCountryList option").prop('disabled', false);
+                        var nxtto = $("#ToCountryList").val();
+                        $("#FromCountryList option[value='" + nxtto + "']").prop("disabled", true);
                 $("#ToStateList").empty();
                 $("#ToCityList").empty();
                 $.ajax({
@@ -288,7 +291,6 @@
         });
 
         function save() {
-            alert("Data Saved!!");
             localStorage.setItem("name", document.getElementById("name").value);
             localStorage.setItem("phone", document.getElementById("phone").value);
             localStorage.setItem("email", document.getElementById("email").value);
